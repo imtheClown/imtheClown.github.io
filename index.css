@@ -30,6 +30,7 @@ body{
 }
 
 .main-container{
+    position: relative;
     width: 90%;
     height: 90%;
     display: flex;
@@ -51,7 +52,6 @@ body{
     padding-bottom: 2vh;
     padding-right: 2vh;
     height: max-content;
-    transition: all 1s;
 
 }
 
@@ -61,6 +61,7 @@ body{
     visibility: hidden;
     opacity: 0;
     height: min-content;
+    z-index: 2;
 
 }
 
@@ -264,11 +265,12 @@ body{
 .leftside-container{
     margin: 2vw 0 0 2vw;
     display: flex;
+    flex-direction: column;
     width: 15%;
     height: min-content;
     font-size: 2vh;
     z-index: 1;
-    position: sticky;
+    transition: all 0.5s;
 }
 
 .tab-group{
@@ -300,11 +302,54 @@ body{
     border-bottom-left-radius: 0.5rem;
     border-top-left-radius: 0.5rem;
     box-shadow: 0.5vh 1vh 0.5vh black;
-    z-index: 2;
+    z-index: 1;
     margin-top: 2vh;
     font-weight: bold;
 
 }
+/*start*/
+.burger-container {
+    display: inline-block;
+    cursor: pointer;
+    padding: 2vh 0 2vh 1vw;
+
+}
+.burger-container:hover .bar{
+    background-color: var(--secondary);
+}
+.burger{
+    width: 100%;
+    display: flex;
+    background-color: var(--primary);
+    align-items: center;
+    justify-content: center;
+    height: min-content;
+    border-top-left-radius: 1vh;
+    border-bottom-left-radius: 1vh;
+    position: sticky;
+}
+
+.bar {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+/* Rotate first bar */
+.change .bar1 {
+    transform: translate(0, 11px) rotate(-45deg);
+}
+
+/* Fade out the second bar */
+.change .bar2 {opacity: 0;}
+
+/* Rotate last bar */
+.change .bar3 {
+    transform: translate(0, -11px) rotate(45deg);
+}
+/*end*/
 
 .page-active{
     margin-top: 2vh;
@@ -318,7 +363,7 @@ body{
     width: 98%;
     height: min-content;
     border-radius: 0.5rem;
-    z-index: 1;
+    z-index: 100;
     box-shadow: 0.5vh 1vh 0.5vh black;
 
     padding: 2vw;
@@ -329,42 +374,50 @@ body{
     align-content: center;
 }
 
-@media only screen and (max-width: 600px) {
-    .main-container{
-        width: 100%;
-    }
-    .leftside-container{
-        width: 20%;
-    }
-    .tab-group{
-        width: 100%;
-        z-index: 5;
-        padding: 0;
-        padding-bottom: 2vh;
-        margin: 0;
-    }
-    .rightside-container{
-        padding-left: 2vh;
-        width: 100%;
-    }
-    .tab{
-        width: 100%;
-    }
-    .active-tab{
-        width: 150%;
-    }
+@media only screen and (max-width: 980px) {
     .profile{
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        z-index: 100;
-        margin: 0;
+    }
+    .rightside-container{
+        padding-left: 2vh;
     }
 }
-
-@media only screen and (max-width: 966px) {
-    .page-active{
-        align-items: center;
-        justify-content: center;
+@media only screen and (max-width: 817px){
+    .burger{
+        display: flex;
+        width: 50px;
     }
+    .leftside-container{
+        left: 0;
+        width: max-content;
+        position: relative;
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        justify-self: start;
+        background-color: var(--primary);
+        border-top-left-radius: 1vh;
+        border-bottom-left-radius: 1vh;
+    }
+    .tab-group{
+        display: none;
+        width: max-content;
+        height: min-content;
+        padding-right: 2vw;
+    }
+    .active-tab{
+        max-width: 95%;
+    }
+}
+@media only screen and (min-width: 817px){
+    .burger{
+        display: none;
+    }
+    .tab-group{
+        display: flex;
+    }
+
+
 }

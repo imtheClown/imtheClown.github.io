@@ -14,6 +14,13 @@
 <body>
     <div class = "main-container">
         <nav class="leftside-container">
+            <div class="burger">
+                <div class="burger-container">
+                    <div class="bar bar1"></div>
+                    <div class="bar bar2"></div>
+                    <div class="bar bar3"></div>
+                </div>
+            </div>
             <ul class = "tab-group">
                 <li class = "tab first-tab">
                     <p>About Me</p>
@@ -26,7 +33,6 @@
                 <li class = "tab fourth-tab">
                         <p>Projects and Contributions</p>
                 </li>
-
             </ul>
         </nav>
 
@@ -200,12 +206,32 @@
 <script>
     let currentTab;
     let currentPage;
+    let burger = document.querySelector(".burger");
+    let navBar = document.querySelector(".tab-group");
     window.addEventListener("resize", () =>{
+        let styles = getComputedStyle(burger)
+        console.log(styles.getPropertyValue("display"))
+        if(styles.getPropertyValue("display") === "none"){
+            navBar.style.display ="flex";
+        }
+        else{
+            navBar.style.display ="none"
+        }
+    })
 
-        console.log("Window height is: " +window.innerHeight);
-        console.log("Window width is: " +window.innerWidth);
-
-
+    burger.addEventListener("click", ()=>{
+        if(burger.style.display !== "none"){
+            let leftContainer = document.querySelector(".leftside-container");
+            burger.classList.toggle("change");
+            if(burger.classList.contains("change")){
+                leftContainer.style.position ="absolute";
+                navBar.style.display = "flex";
+            }
+            else{
+                navBar.style.display = "none";
+                leftContainer.style.position ="relative";
+            }
+        }
     })
     window.addEventListener("load", ()=>{
         let firstTab = document.querySelector(".first-tab");
