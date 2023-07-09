@@ -436,6 +436,7 @@ h1{
         border-bottom-left-radius:  0.25rem;
     }
     .tab-group{
+        margin-left: -25px;
         display: none;
         width: max-content;
         height: min-content;
