@@ -140,7 +140,7 @@
                             </ul>
                         </footer>
                     </div>
-                    <div class = "project-box " >
+                    <div class = "project-box second " >
                         <header class = "project-title project">
                             Pokemon Console Game
                         </header>
@@ -158,7 +158,7 @@
                             </ul>
                         </footer>
                     </div>
-                    <div class = "project-box " >
+                    <div class = "project-box third " >
                         <header class = "project-title project">
                             Loadout System
                         </header>
@@ -208,20 +208,41 @@
     let currentPage;
     let burger = document.querySelector(".burger");
     let navBar = document.querySelector(".tab-group");
+    let firstProj = document.querySelector(".first");
+    let secondProj = document.querySelector(".second");
+    let thirdProj = document.querySelector(".third");
+    let leftContainer = document.querySelector(".leftside-container");
+
     window.addEventListener("resize", () =>{
         let styles = getComputedStyle(burger)
-        console.log(styles.getPropertyValue("display"))
         if(styles.getPropertyValue("display") === "none"){
+            if(burger.classList.contains("change")){
+                burger.classList.remove("change");
+                leftContainer.style.position="relative";
+            }
             navBar.style.display ="flex";
         }
         else{
-            navBar.style.display ="none"
+            if(!burger.classList.contains("change")) {
+                navBar.style.display ="none"
+            }
         }
     })
 
+    firstProj.addEventListener("click", () =>{
+        let locs = ["https://github.com/imtheclown/frontend","https://github.com/imtheclown/TugonProject"];
+        for(let i =0; i < locs.length; i++){
+            window.open(locs[i]);
+        }
+    })
+    secondProj.addEventListener("click", ()=>{
+        window.open("https://github.com/imtheclown/pokemon_console_game", "_blank");
+    })
+    thirdProj.addEventListener("click", ()=>{
+        window.open("https://github.com/imtheclown/CMSC126-SPRINT2", "_blank")
+    })
     burger.addEventListener("click", ()=>{
         if(burger.style.display !== "none"){
-            let leftContainer = document.querySelector(".leftside-container");
             burger.classList.toggle("change");
             if(burger.classList.contains("change")){
                 leftContainer.style.position ="absolute";
