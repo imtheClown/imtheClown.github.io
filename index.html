@@ -9,6 +9,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Martian+Mono&family=Poppins:wght@300&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
@@ -183,9 +189,10 @@
             <section class = "page first-page">
                 <div class="content-container4">
                     <div class="profile">
-                        <img src="" alt="This is the photo">
+                        <img src="photo.jpg/" >
                         <div class="profile-description">
                             <h1>Jonathan Calugas</h1>
+                            <br>
                             <p>I am a BS Computer Science student at the University of the Philippines in the Visayas. I become interested in software development due to my
                             passion in playing video games. My academic background and programming experience made me suitable in backend programming, however I am also
                             eager to learn frontend development.</p>
@@ -193,9 +200,14 @@
                     </div>
                     <p>Reach me with:</p>
                     <div class="socials">
-                        <i>Github</i>
-                        <i>Facebook</i>
-                        <i>Twitter</i>
+                        <p><a href="mailto:jccalugas@up.edu.ph">jccalugas@up.edu.ph</a></p>
+                        <p><a href="tel:+639101621385">+639101621385</a></p>
+                        <div class ="social-img">
+                            <img src=/github.svg alt="github image" class="git"/>
+                            <img src="/twitter.svg" alt="twitter image" class="twi"/>
+                            <img src="facebook.svg" alt="facebook" class="fac"/>
+                        </div>
+
                     </div>
                 </div>
             </section>
@@ -212,6 +224,17 @@
     let secondProj = document.querySelector(".second");
     let thirdProj = document.querySelector(".third");
     let leftContainer = document.querySelector(".leftside-container");
+    let git = document.querySelector(".git");
+    let twit = document.querySelector(".twi");
+    let face = document.querySelector(".fac");
+
+    git.addEventListener("click", ()=>{window.open("https://github.com/imtheclown")});
+    twit.addEventListener("click", ()=>{
+        window.open("https://twitter.com/cryomumma");
+    })
+    face.addEventListener("click", ()=>{
+        window.open("https://www.facebook.com/jason.argos.14/");
+    })
 
     window.addEventListener("resize", () =>{
         let styles = getComputedStyle(burger)
