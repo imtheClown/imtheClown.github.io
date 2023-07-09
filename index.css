@@ -420,6 +420,7 @@ h1{
     .burger{
         display: flex;
         width: 50px;
+        margin-left: -25px;
     }
     .leftside-container{
         padding-right: 2vw;
