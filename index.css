@@ -422,9 +422,10 @@ h1{
         width: 50px;
     }
     .leftside-container{
+        padding-right: 2vw;
+        position: absolute;
         left: 0;
         width: max-content;
-        position: relative;
         z-index: 1000;
         display: flex;
         flex-direction: column;
