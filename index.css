@@ -17,6 +17,7 @@
     padding: 0;
     margin: 0;
 }
+/*body*/
 body{
     margin: 0;
     padding: 0;
@@ -29,17 +30,23 @@ body{
     align-items: center;
     justify-content: center;
 }
+/*end body*/
 
+/*start main container*/
 .main-container{
     position: relative;
-    width: 90%;
-    height: 90%;
+    width: 95%;
+    height: 95%;
     display: flex;
     align-content: center;
     justify-content: center;
     border-radius: 0.25rem;
     flex-direction: row;
+    min-width: 300px;
 }
+/*end main container*/
+
+/*start right side container*/
 .rightside-container{
     display: flex;
     align-items: center;
@@ -56,6 +63,7 @@ body{
 
 }
 
+/*general design for page*/
 .page{
     background-color: var(--secondary);
     display: none;
@@ -64,10 +72,7 @@ body{
 
 }
 
-/*.page * {*/
-/*    color: #2c2c2c;*/
-/*}*/
-
+/*second page container*/
 .content-container{
     width: 95%;
     height: min-content;
@@ -75,21 +80,25 @@ body{
     flex-direction: column;
     align-content: center;
     justify-content: center;
-    overflow: scroll;
 }
+/*fourth container*/
 .content-container3{
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     margin: auto;
     gap: 10px;
 
 }
 
+/*general*/
 .project{
     border-bottom: 1px solid var(--accent);
 }
+
 .project-title{
+    border-top-right-radius: 1vw;
+    border-top-left-radius: 1vw;
     font-family: 'Martian Mono', monospace;
     width: 100%;
     height: 20%;
@@ -114,6 +123,7 @@ body{
 
 
 }
+
 .project-box{
     border-radius: 1vw;
     height: max-content;
@@ -121,7 +131,6 @@ body{
     display: flex;
     border: 3px solid var(--accent);
     flex-direction: column;
-    overflow: scroll;
     cursor: pointer;
     justify-self: center;
 }
@@ -159,7 +168,6 @@ body{
     justify-content: start;
     width: 95%;
     padding: 1vw;
-    overflow: scroll;
     height: min-content;
     border-top: 1px solid var(--accent);
 
@@ -188,7 +196,10 @@ body{
     padding: 3px;
     background-color: white;
 }
+/*end of the third container design*/
 
+
+/*third page container*/
 .content-container2{
     width: 100%;
     display: grid;
@@ -225,6 +236,10 @@ body{
 .education-content em{
     font-weight: bold;
 }
+
+/*end of the second page containter*/
+
+/*first page container*/
 .content-container4{
     display: flex;
     flex-direction: column;
@@ -273,8 +288,36 @@ body{
 
 }
 
+.profile-description{
+    align-content: center;
+}
+
+.socials{
+    display: flex;
+    flex-direction: column;
+}
+
+.social-img{
+    display: flex;
+}
+.social-img img{
+    padding: 2px;
+    margin: 10px;
+    width: 50px;
+    cursor: pointer;
+}
+.social-img img:hover{
+    transform: scale(110%);
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: cornflowerblue;
+}
+/*end of the first page container*/
+
+/*end of right side container*/
 
 
+/*left side container*/
 .leftside-container{
     font-family: 'Martian Mono', monospace;
     margin: 2vw 0 0 2vw;
@@ -282,17 +325,17 @@ body{
     flex-direction: column;
     width: 15%;
     height: min-content;
-    font-size: 2vh;
     z-index: 1;
+    background-color: var(--primary);
 }
 h1{
     font-family: 'Martian Mono', monospace;
 }
 
 .tab-group{
+    margin-top: 1vw;
     width: 100%;
     height: min-content;
-    background-color: var(--primary);
     border-top-left-radius: 0.25rem;
     border-bottom-left-radius: 0.25rem;
     display: flex;
@@ -302,28 +345,16 @@ h1{
     min-height: 20px;
 }
 .tab{
-
     display: flex;
     flex: 1;
+    font-size: 15px;
     align-items: center;
-    padding: 1vh;
-    margin: 2vh 1px 1px 2vh;
+    padding: 1vw 1vh 1vw 0;
+    margin: 0 0 0 1vh;
     transition: all 0.3s;
 }
 
-.active-tab{
-    background-color: var(--secondary) ;
-    margin-right: 0;
-    width: 105%;
-    border-bottom-left-radius: 0.25rem;
-    border-top-left-radius: 0.25rem;
-    box-shadow: 0.5vh 1vh 0.5vh black;
-    z-index: 2;
-    margin-top: 2vh;
-    font-weight: bold;
 
-}
-/*start*/
 .burger-container {
     display: inline-block;
     cursor: pointer;
@@ -336,13 +367,11 @@ h1{
 .burger{
     width: 100%;
     display: flex;
-    background-color: var(--primary);
     align-items: center;
     justify-content: center;
     height: min-content;
     border-top-left-radius: 0.25rem;
     border-bottom-left-radius: 0.25rem;
-    position: sticky;
 }
 
 .bar {
@@ -353,19 +382,19 @@ h1{
     transition: 0.4s;
 }
 
-/* Rotate first bar */
 .change .bar1 {
     transform: translate(0, 11px) rotate(-45deg);
 }
 
-/* Fade out the second bar */
 .change .bar2 {opacity: 0;}
 
-/* Rotate last bar */
 .change .bar3 {
     transform: translate(0, -11px) rotate(45deg);
 }
-/*end*/
+/*end for left side container*/
+
+
+/*selection design*/
 
 .page-active{
     margin-top: 2vh;
@@ -383,79 +412,138 @@ h1{
     padding: 2vw;
     min-height: 295px;
 }
+.active-tab{
+    background-color: var(--secondary) ;
+    margin-right: 0;
+    width: 105%;
+    border-bottom-left-radius: 0.25rem;
+    border-top-left-radius: 0.25rem;
+    box-shadow: 0.5vh 1vh 0.5vh black;
+    z-index: 2;
+    margin-top: 2vh;
+    font-weight: bold;
 
-.profile-description{
-    align-content: center;
 }
 
-.socials{
-    display: flex;
-    flex-direction: column;
+/*end of selection design*/
+
+
+/*change from side to top nav bar*/
+@media only screen and (max-width: 1048px) {
+    .main-container{
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        position: relative;
+    }
+    .leftside-container{
+        flex-direction: row;
+        width: 100%;
+        margin: 0;
+        position: sticky;
+        padding-bottom: 0;
+    }
+    .tab-group{
+        flex-direction: row;
+        width: 100%;
+        margin: 0 2vw 0 2vw;
+        padding-bottom: 0;
+    }
+    .tab-group li{
+        padding-bottom: 1vh;
+    }
+    .tab-group li p{
+        margin-left: 5px;
+    }
+    .active-tab{
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 2vw;
+    }
+    .active-tab{
+        margin: 0;
+    }
+    .tab{
+        margin: 10px 10px 0 10px;
+        padding-bottom: 0;
+    }
+
+    .rightside-container{
+        width: 100%;
+        margin: 0;
+        padding-right: 0;
+        align-items: start;
+        justify-content: center;
+        border-top-right-radius: 0;
+    }
+    .page-active{
+        margin: 0;
+    }
 }
 
-.social-img{
-    display: flex;
+/*burger nav should be hidden*/
+@media only screen and (min-width: 481px) {
+    .burger{
+        display: none;
+    }
+
 }
-.social-img img{
-    padding: 2px;
-    margin: 10px;
-    width: 50px;
+/*change in font in tab to prevent overflow*/
+@media only screen and (max-width: 640px) {
+    .tab{
+        font-size: 12px;
+    }
+
 }
-.social-img img:hover{
-    border: 2px solid black;
-    border-radius: 5px;
-    background-color: cornflowerblue;
-}
-@media only screen and (max-width: 980px) {
+
+/*use of burger nav*/
+@media only screen and (max-width: 480px) {
+
+    .project-box:hover{
+        transform: scale(105%);
+        background-color: #f3f3f3;
+    }
+    .main-container{
+        height: 100%;
+    }
+    .page-active{
+        box-shadow: none;
+    }
+    .burger{
+        padding-bottom: 0;
+        display: flex;
+        justify-content: start;
+        margin: 2vw
+    }
+    .burger-container{
+        padding: 0;
+    }
+    .leftside-container{
+        flex-direction: column;
+        z-index: 10;
+        height: max-content;
+
+    }
+    .tab-group{
+        display: none;
+        flex-direction: column;
+        padding-bottom: 2vh;
+
+    }
     .profile{
         flex-direction: column;
         align-items: center;
         justify-content: center;
     }
-    .rightside-container{
-        padding-left: 2vh;
-    }
-}
-@media only screen and (max-width: 817px){
-    .burger{
-        display: flex;
-        width: 50px;
-        margin-left: -25px;
-    }
-    .leftside-container{
-        padding-right: 2vw;
-        position: absolute;
-        left: 0;
-        width: max-content;
-        z-index: 1000;
-        display: flex;
-        flex-direction: column;
-        justify-self: start;
-        background-color: var(--primary);
-        border-top-left-radius: 0.25rem;
-        border-bottom-left-radius:  0.25rem;
-    }
-    .tab-group{
-        margin-left: -25px;
-        display: none;
-        width: max-content;
-        height: min-content;
-        padding-right: 2vw;
-    }
     .active-tab{
-        max-width: 95%;
+        width: 90%;
     }
-    .tab p{
-        max-width: 90%;
+    .tab{
+        padding: 2vw;
     }
 }
-@media only screen and (min-width: 817px){
-    .burger{
-        display: none;
-    }
-    .tab-group{
-        display: flex;
-    }
 
-
-}

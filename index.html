@@ -203,7 +203,6 @@
                         <img src="/twitter.svg" alt="twitter image" class="twi"/>
                         <img src="/facebook.svg" alt="facebook" class="fac"/>
                     </div>
-
                 </div>
             </div>
         </section>
@@ -211,88 +210,5 @@
     </div>
 </div>
 </body>
-<script>
-    let currentTab;
-    let currentPage;
-    let burger = document.querySelector(".burger");
-    let navBar = document.querySelector(".tab-group");
-    let firstProj = document.querySelector(".first");
-    let secondProj = document.querySelector(".second");
-    let thirdProj = document.querySelector(".third");
-    let leftContainer = document.querySelector(".leftside-container");
-    let git = document.querySelector(".git");
-    let twit = document.querySelector(".twi");
-    let face = document.querySelector(".fac");
-
-    git.addEventListener("click", ()=>{window.open("https://github.com/imtheclown")});
-    twit.addEventListener("click", ()=>{
-        window.open("https://twitter.com/cryomumma");
-    })
-    face.addEventListener("click", ()=>{
-        window.open("https://www.facebook.com/jason.argos.14/");
-    })
-
-    window.addEventListener("resize", () =>{
-        let styles = getComputedStyle(burger)
-        if(styles.getPropertyValue("display") === "none"){
-            if(burger.classList.contains("change")){
-                burger.classList.remove("change");
-            }
-            navBar.style.display ="flex";
-        }
-        else{
-            if(!burger.classList.contains("change")) {
-                navBar.style.display ="none"
-            }
-        }
-    })
-
-    firstProj.addEventListener("click", () =>{
-        let locs = ["https://github.com/imtheclown/frontend","https://github.com/imtheclown/TugonProject"];
-        for(let i =0; i < locs.length; i++){
-            window.open(locs[i]);
-        }
-    })
-    secondProj.addEventListener("click", ()=>{
-        window.open("https://github.com/imtheclown/pokemon_console_game", "_blank");
-    })
-    thirdProj.addEventListener("click", ()=>{
-        window.open("https://github.com/imtheclown/CMSC126-SPRINT2", "_blank")
-    })
-    burger.addEventListener("click", ()=>{
-        if(burger.style.display !== "none"){
-            burger.classList.toggle("change");
-            if(burger.classList.contains("change")){
-                navBar.style.display = "flex";
-            }
-            else{
-                navBar.style.display = "none";
-            }
-        }
-    })
-    window.addEventListener("load", ()=>{
-        let firstTab = document.querySelector(".first-tab");
-        let firstPage = document.querySelector(".first-page");
-        firstPage.classList.add("page-active");
-        firstTab.classList.add("active-tab");
-        currentTab = firstTab;
-        currentPage = firstPage
-    })
-    let tabs = document.querySelectorAll(".tab");
-    tabs = Array.from(tabs)
-    tabs.forEach(ta =>{
-        ta.addEventListener("click", tabSelector)
-    })
-    function tabSelector(e){
-        currentTab.classList.remove("active-tab");
-        this.classList.add("active-tab");
-        currentPage.classList.remove("page-active");
-        let className = this.classList[1];
-        className = className.split("-")[0];
-        currentPage = document.querySelector(`.${className}-page`)
-        currentPage.classList.add("page-active")
-        currentTab = this;
-    }
-
-</script>
+<script src="./index.js"></script>
 </html>
